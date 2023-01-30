@@ -1,8 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
 .contaier {
+    font-family: 'Roboto', sans-serif;
     display: flex;
+}
+
+/* Container design */
+body {
+    background-color: #F0F5F8;
+}
+.contaier {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left-main {
+    width: 830px;
+}
+
+.right-main {
+    width: 830px;
+}
+
+.leftMainNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftMainNav a {
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid #888;
+    background-color: #E4ECF2;
+    border-radius: 5px;
+}
+
+.leftMainNav a img {
+    width: 20px;
+    height: 20px;
+}
+
+.leftMainNav select {
+    width: 125px;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid #888;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.left-div,
+.right-div {
+    margin-top: 10px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.cart-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-form select {
+    width: 380px;
+    background-color: #fff;
+    border: 1px solid #888;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.cart-form img {
+    width: 30px;
+    height: 30px;
+    opacity: .7;
+}
+
+.item-list {
+    min-height: 500px;
+    margin-top: 20px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.item-list table {
+    width: 100%;
+    text-align: left;
+}
+
+.item-list th {
+    padding: 3px;
+    font-size: 20px;
+}
+
+.item-list td {
+    background-color: #F6FDFE;
+    font-size: 20px;
+    padding: 2px;
+}
+
+.item-list td img {
+    width: 20px;
+    height: 20px;
+    padding-top: auto;
+}
+
+.details {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.details-left {
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.details-left img {
+    margin-left: 10px;
+    width: 22px;
+    height: 22px;
+}
+
+.details-left input {
+    margin-left: 10px;
+    padding: 2px 10px;
+}
+
+.details-right {
+    width: 40%;
+    text-align-last: left;
+}
+
+.details-right p {
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+}
+
+.details-right input {
+    height: 30px;
+    width: 80px;
+}
+
+.cart-action img {
+    width: 20px;
+    height: 20px;
+}
+
+.cart-action {
+    display: flex;
+    justify-content: center;
+}
+
+.cart-action a {
+    background-color: #E3EBF0;
+    padding: 8px 40px;
+    font-size: 20px;
+    margin: 10px 50px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+.rightMainNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightMainNav a {
+    font-size: 20px;
+    background-color: #e3ebf0;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+.rightMainNav a:nth-child(1) {
+    padding: 5px 50px;
+}
+
+.rightMainNav a:nth-child(2) {
+    background-color: #EFA32A;
+    padding: 5px 100px;
+}
+
+.rightMainNav a:nth-child(3) {
+    padding: 5px 100px;
+}
+
+.rightMainNav a img{
+    width: 20px;
+    height: 20px;
+}
+
+
+.right-div {
+    max-height: 92vh;
+    overflow: auto;
+}
+
+.filter-form form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-form form a {
+    width: 34px;
+    height: 34px;
+    opacity: .7;
+}
+
+.filter-form form input {
+    padding: 5px;
+    width: 370px;
+    height: 30px;
+    border: 1px solid #888;
+    border-radius: 2px;
+}
+
+.filter-form form input::placeholder {
+    font-size: 20px;
+}
+
+
+.right-div-content {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
+
+.filters {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top: 15px;
+}
+
+.filters a {
+    font-size: 16px;
+    text-align: center;
+    background-color: #E3EBF0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+.products {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.product-card {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.product-card span h4 {
+    background-color: #E3EBF0;
+    padding: 10px 5px;
+}
+
+.product-card h4 {
+    overflow: hidden;
+}
+
+/* "All Sales modal" style */
+.all-sales-modal, .hold-sales-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.allSalesModal, .holdSalesModal {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 75vw;
+    height: 80vh;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+.allSalesModalHeading,
+.holdSalesModalHeading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.allSalesModalHeading h3,
+.holdSalesModalHeading h3 {
+    font-weight: normal;
+    font-size: 28px;
+    color: #333;
+}
+
+.allSalesModalIdClose,
+.holdSalesModalIdClose {
+    color: #333;
+    height: 20px;
+    width: 20px;
+}
+
+
+.allSalesModalContent,
+.holdSalesModalContent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.allSalesModalList,
+.holdSalesModaldist {
+    width: 500px;
+}
+
+.allSalesModalListFilter,
+.holdSalesModalListFilter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+}
+
+.allSalesModalListFilter input {
+    height: 100%;
+    width: 400px;
+    padding-left: 10px;
+}
+
+.allSalesModalListFilter input::placeholder {
+    font-size: 16px;
+}
+
+.allSalesModalListFilter select {
+    height: 100%;
+    margin: 0;
+    width: auto;
+    background-color: #fff;
+    border-style: none;
+    border: 1px solid #e3ebf0;
+    font-size: 16px;
+    padding: 1px 2px;
+    text-align: center;
+}
+
+.allSalesModalListItems,
+.holdSalesModalListItems {
+    margin-top: 10px;
+    width: 500px;
+}
+
+.allSalesModalListItems table,
+.holdSalesModalListItems table {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.allSalesModalListItems tr:first-child,
+.holdSalesModalListItems tr:first-child {
+    background-color: #e3ebf0;
+}
+
+
+.allSalesModalDetails,
+.holdSalesModalDetails {
+    width: 550px;
+}
+
+.allSalesModalDetailsFilter {
+    width: 400px;
+    text-align: right;
+    height: 30px;
+}
+
+.allSalesModalDetailsFilter form {
+    height: 100%;
+}
+
+.allSalesModalDetailsFilter form input {
+    height: 100%;
+}
+
+.allSalesModalDetailsFilter form input:first-child {
+    box-shadow: none;
+    border: 1px solid #888;
+    border-radius: 2px;
+    padding: 1px 10px;
+    font-size: 16px;
+}
+.allSalesModalDetailsFilter form input:last-child {
+    font-size: 14px;
+    background-color: #e3ebf0;
+    box-shadow: none;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.allSalesModalDetailsContent,
+.holdSalesModalDetailsContent {
+    margin-top: 10px;
+}
+
+.allSalesModalDetailsContent h3,
+.holdSalesModalDetailsContent h3{
+    text-align: center;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+
+.allSalesModalDetailsContentTable,
+.holdSalesModalDetailsContentTable {
+    min-height: 300px;
+    text-align: center;
+}
+
+
+.allSalesModalDetailsContentTable table,
+.holdSalesModalDetailsContentTable table {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.allSalesModalDetailsContentTable th,
+.holdSalesModalDetailsContentTable th {
+    background-color: #e3ebf0;
+    border: 1px solid #e3ebf0;
+}
+
+.allSalesModalDetailsContentDetails,
+.holdSalesModalDetailsContentDetails {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    background-color: #F7F9FB;
+}
+
+.allSalesModalDetailsContentDetails p,
+.holdSalesModalDetailsContentDetails p {
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+}
+
+
+.allSalesModalDetailsActions,
+.holdSalesModalDetailsActions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allSalesModalDetailsActions a,
+.holdSalesModalDetailsActions a {
+    width: 130px;
+    background-color: #E3EBF2;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+
+/* "Hold modal" style */
+.hold-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.holdModal {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60vw;
+    height: 20vh;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+.holdModal h3 {
+    font-weight: normal;
+    font-size: 28px;
+    color: #333;
+}
+
+.holdModal p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.holdModal input {
+    width: 100%;
+    padding: 5px 0px 5px 5px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.holdModalActionBtns,
+.addItemModalActionBtn {
+    margin-top: 20px;
+}
+
+.holdModalActionBtns a,
+.addItemModalActionBtn a {
+    display: inline-block;
+    width: 100px;
+    background-color: #E3EBF2;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+
+/* "Finalize Sale" Modal */
+.finalize-sale-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.finalizeSaleModal {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60vw;
+    min-height: 50vh;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+.finalizeSaleModal h3 {
+    font-weight: normal;
+    font-size: 28px;
+    color: #333;
+}
+
+.finalizeSaleModalDetail {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.finalizeSaleModalDetailLeft {
+    text-align: left;
+}
+
+.finalizeSaleModalDetailRight {
+    text-align: right;
+}
+
+.finalizeSaleModalDetail span {
+    width: 100%;
+    text-align: right;
+}
+
+.finalizeSaleModalActionBtns {
+    margin-top: 20px;
+}
+
+.finalizeSaleModalHr {
+    border: 1px dashed;
+    margin-top: 10px;
+}
+
+.finalizeSaleModalAdjustments {
+    margin-top: 15px;
+}
+
+.finalizeSaleModalAdjustmentsTop,
+.finalizeSaleModalAdjustmentsBottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.finalizeSaleModalAdjustmentsTopPaid {
+    text-align: left;
+}
+
+.finalizeSaleModalAdjustmentsTopPaid input,
+.finalizeSaleModalAdjustmentsTopDue input,
+.finalizeSaleModalAdjustmentsBottomLeft input,
+.finalizeSaleModalAdjustmentsBottomRight input {
+    padding: 5px 10px;
+}
+
+.finalizeSaleModalAdjustmentsTopDue {
+    text-align: right;
+}
+
+.finalizeSaleModalAdjustmentsMiddle {
+    width: 100%;
+    text-align: center;
+}
+
+.finalizeSaleModalAdjustmentsBottomLeft p {
+    margin-top: 5px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.finalizeSaleModalAdjustmentsBottomRight select {
+    margin-top: 5px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.finalizeSaleModalCheckMarks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.finalizeSaleModalNote {
+    margin-top: 20px;
+}
+
+.finalizeSaleModalNote p {
+    font-size: 16px;
+}
+
+.finalizeSaleModalNote textarea {
+    width: 100%;
+    height: 90px;
+}
+
+.finalizeSaleModalActionBtns a {
+    display: inline-block;
+    width: 100px;
+    background-color: #E3EBF2;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+/* "Calculator Modal" style */
+.calculator-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.calculatorModal {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F6F9;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+.calculatorModal form {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+}
+
+.calculatorModal form input:hover{
+    cursor: pointer;
+}
+
+.calculatorScreen {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    height: 48px;
+    padding-left: 10px;
+}
+
+.calculatorNumBtn, .calculatorActionBtn {
+    height: 42px;
+    color: #7790A4;
+    border: 1px solid #888;
+}
+
+.calculatorNumBtn {
+    background-color: #E4EDF1;
+}
+
+.calculatorActionBtn {
+    background-color: #FFFFFF;
+}
+
+
+/* "Add Item Modal" style */
+.add-item-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.addItemModal {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60vw;
+    min-height: 70vh;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+.addItemModal form  {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.addItemModalItem1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.addItemModalItem19 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.addItemModalItem20 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.addItemModalInputSet{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.addItemModalInputSet label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+}
+
+.addItemModalInputSet label span {
+    color: #f00;
+}
+
+.addItemModalInputSet input,
+.addItemModalInputSet select {
+    width: 80%;
+    height: 30px;
+    background-color: #fff;
+    box-shadow: none;
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding: 2px 10px;
+    font-size: 16px;
+}
+
+.addItemModalActionBtn input{
+    display: inline-block;
+    width: 120px;
+    background-color: #E3EBF2;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.addItemModalInputSet img {
+    width: 20px;
+    height: 20px;
 }
